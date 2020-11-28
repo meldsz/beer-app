@@ -15,7 +15,9 @@
       <div>
         <div>{{ beerDetails.name }}</div>
         <div></div>
-        <button @click="showBreweryDetails"></button>
+        <button>
+          <router-link to="/brewery-details">Show Brewery details</router-link>
+        </button>
       </div>
     </div>
   </div>
@@ -26,7 +28,7 @@ import { mapActions, mapState } from "vuex";
 import { FETCH_NEW_BEER } from "../store/types";
 
 export default {
-  name: "HomePage",
+  name: "RandomBeerPage",
   computed: {
     ...mapState(["beerDetails"]),
   },
@@ -34,7 +36,6 @@ export default {
     ...mapActions({
       dispatchFetchRandomBeer: FETCH_NEW_BEER,
     }),
-    showBreweryDetails() {},
   },
   created() {
     this.dispatchFetchRandomBeer();

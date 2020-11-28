@@ -1,5 +1,5 @@
 <template>
-  <div>Back</div>
+  <router-link to="/">Back</router-link>
 </template>
 
 <script>
